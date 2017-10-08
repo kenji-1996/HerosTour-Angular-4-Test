@@ -1,4 +1,4 @@
-<div *ngIf="hero">
+<div *ngIf="hero; then changeSelectedHero(hero.name)">
   <h2>{{hero.name}} details!</h2>
   <div><label>id: </label>{{hero.id}}</div>
   <div>

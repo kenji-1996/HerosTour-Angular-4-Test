@@ -1,10 +1,11 @@
-import {Component, OnInit, Input, Injectable} from '@angular/core';
+import {Component, OnInit, Input, OnDestroy} from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { HeroService } from '../hero.service';
-import { Hero } from '../hero';
+import { HeroService } from '../services/hero.service';
+import { Hero } from '../objects/hero';
+import {SelectedHeroService} from "../services/selected-hero.service";
 
 @Component({
   selector: 'hero-detail',
@@ -12,14 +13,15 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-detail.component.css']
 })
 
-export class HeroDetailComponent implements OnInit {
+export class HeroDetailComponent implements OnInit,OnDestroy {
 
   @Input() hero: Hero;
 
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private sh: SelectedHeroService
   ) {}
 
   goBack(): void {
@@ -30,10 +32,21 @@ export class HeroDetailComponent implements OnInit {
     return this.hero;
   }
 
+  changeSelectedHero(name: string): void {
+    this.sh.changeSelectedHero(name);
+  }
+
   ngOnInit(): void {
+    if(this.hero != null) {
+      this.sh.changeSelectedHero(this.hero.name);
+      console.log("test");
+    }
     this.route.paramMap
       .switchMap((params: ParamMap) => this.heroService.getHero(+params.get('id')))
       .subscribe(hero => this.hero = hero);
   }
 
+  ngOnDestroy() {
+    this.changeSelectedHero('');
+  }
 }

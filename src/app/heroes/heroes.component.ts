@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from '../objects/hero';
+import { HeroService } from '../services/hero.service';
 
 @Component({
   selector: 'my-heroes',
@@ -25,7 +25,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes)
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes)
   }
 
   gotoDetail(): void {

@@ -36,12 +36,6 @@
   cursor: pointer;
   background-color: crimson;
 }
-.grid-pad {
-  padding: 10px 0;
-}
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
-}
 @media (max-width: 600px) {
   .module {
     font-size: 10px;
@@ -50,8 +44,5 @@
 @media (max-width: 1024px) {
   .grid {
     margin: 0;
-  }
-  .module {
-    min-width: 60px;
   }
 }
