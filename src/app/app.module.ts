@@ -33,7 +33,7 @@ import { AppRoutingModule }     from './app-routing.module';
   providers: [
     HeroService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
-  ],
+    ],
   bootstrap: [ AppComponent ]
 })
 

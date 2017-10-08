@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as myGlobals from '../globals';
 
 @Component({
@@ -6,13 +6,15 @@ import * as myGlobals from '../globals';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
+
+  constructor(){}
 
   title = myGlobals.TITLE;
 
-  constructor() { }
+  ngOnInit(): void {
 
-  ngOnInit() {
   }
 
 }
