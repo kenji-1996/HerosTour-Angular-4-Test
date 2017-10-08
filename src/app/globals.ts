@@ -3,6 +3,6 @@
 //
 'use strict';
 
-export var SEP = '/';
-export var TITLE:string='Callum.Workspace';
-export var SUB_TITLE:string='An Angular 2 project by Callum Chisholm';
+export const SEP = '/';
+export const TITLE:string='Tour of Heros';
+export const SUB_TITLE:string='An Angular 2 project by Callum Chisholm';

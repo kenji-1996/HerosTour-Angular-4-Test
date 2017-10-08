@@ -1,14 +1,13 @@
+//Imports
 import { Component } from '@angular/core';
-import * as myGlobals from './globals';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html'
 })
-/**
- * Global items
- */
+
 export class AppComponent {
-  sub_title = myGlobals.SUB_TITLE;
+  title = 'Tour of Heroes';
 }
+
+
