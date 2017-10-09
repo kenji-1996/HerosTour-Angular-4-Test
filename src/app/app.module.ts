@@ -8,14 +8,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeroService } from './hero.service';
+import { HeroService } from './services/hero.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { SelectedHeroService } from "./services/selected-hero.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {InMemoryDataService} from "./in-memory-data.service";
+import {InMemoryDataService} from "./services/in-memory-data.service";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {HttpModule} from "@angular/http";
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {HttpModule} from "@angular/http";
     NavbarComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
