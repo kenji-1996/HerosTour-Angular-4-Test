@@ -4,11 +4,19 @@
     [class.selected]="hero === selectedHero"
     (click)="onSelect(hero)">
   <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <button class="btn btn-danger btn-sm btn-position float-right"
+          (click)="delete(hero);$event.stopPropagation()">x</button>
   </li>
+  <div>
+    <label>Hero name:</label> <input #heroName />
+    <button (click)="add(heroName.value); heroName.value=''">
+      Add
+    </button>
+  </div>
   <div *ngIf="selectedHero">
     <h2>
       {{selectedHero.name | uppercase}} is my hero
     </h2>
-    <button (click)="gotoDetail()">View Details</button>
+    <button class="btn btn-sm btn-primary" (click)="gotoDetail()">View Details</button>
   </div>
 </ul>

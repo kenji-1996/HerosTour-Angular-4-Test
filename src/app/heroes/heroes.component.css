@@ -7,11 +7,13 @@
   list-style-type: none; /* removes dots */
   padding: 0;
   width: 15em;
+
 }
 
 .heroes li {
   cursor: pointer;
   border-radius: 4px;
+
 }
 
 .heroes li:hover {
@@ -28,6 +30,12 @@
 .heroes li.selected:hover {
   background-color: crimson !important;
   color: white;
+}
+
+.btn-position {
+  position: relative;
+  height: 23px;
+  line-height: 11px;
 }
 
 .badge {

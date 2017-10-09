@@ -12,7 +12,7 @@ import {Subject} from "rxjs/Subject";
 
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  private ngUnsubscribe: Subject<void> = new Subject<void>();
+  //private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(private sh: SelectedHeroService) {
     this.sh.selectedHeroObservable
