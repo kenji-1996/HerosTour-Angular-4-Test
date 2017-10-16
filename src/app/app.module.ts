@@ -16,7 +16,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {InMemoryDataService} from "./services/in-memory-data.service";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {HttpModule} from "@angular/http";
-import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 
 @NgModule({
@@ -25,8 +24,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     NavbarComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent,
-    HeroSearchComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
